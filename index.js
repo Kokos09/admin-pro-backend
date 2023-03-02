@@ -1,16 +1,19 @@
 const express = require('express');
-const {dbConnection}=require('./database/config');
 require('dotenv').config();
+var cors=require('cors');
+
+const {dbConnection}=require('./database/config');
 
 //Servidor 
 const app = express();
 
+//Configurar CORS
+app.use(cors());
+
 //Base de datos
 dbConnection();
 
-// adminpoweruser
-// 5CMuV1sSVY497xA96dy6t
-
+// Rutas
 app.get('/',(req,res)=>{
 
     res.json({
