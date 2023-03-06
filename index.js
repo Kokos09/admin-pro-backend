@@ -10,6 +10,8 @@ const app = express();
 //Configurar CORS
 app.use(cors());
 
+app.use(express.static('public'));
+
 app.use(express.json());
 
 //Base de datos
